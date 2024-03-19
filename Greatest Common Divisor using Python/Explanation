@@ -1,0 +1,17 @@
+Explanation:
+
+1. The `gcd_looping` function now takes a list of integers (`numbers`) as input.
+
+2. It finds the smallest number (`gcd`) within the `numbers` list using `min`.
+
+3. The `while` loop iterates through potential divisors, starting from the minimum value (`gcd`) and decreasing down to 1.
+
+4. Inside the loop:
+   - The `all` function is used to check if the current divisor (`gcd`) divides **all** the numbers in the `numbers` list without a remainder (using modulo operation).
+     - If all numbers have no remainder, it signifies a common divisor is found.
+
+5. If the loop completes without finding a common divisor, it returns 1, indicating no common divisor exists for the given numbers.
+
+6. The main block gets the number of integers and individual integer inputs from the user. It then calls the `gcd_looping` function with the list of integers.
+
+7. The printed message differentiates between finding a GCF and no common divisor being found.

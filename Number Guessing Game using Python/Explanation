@@ -1,0 +1,22 @@
+Explanation: Python Guessing Game?
+
+1. Import `random` module: This module provides functions for generating random numbers.
+2. `guess_number` function:
+   - Takes `difficulty` as input (1: easy, 2: medium, 3: hard).
+   - Sets `lower_bound` and `upper_bound` based on difficulty.
+   - Generates a random number using `random.randint`.
+   - Initializes `guess` to -1.
+   - Uses a `while` loop to continue until the guess is correct.
+      - Gets user input inside a `try-except` block to handle potential `ValueError` if the input is not a number.
+      - Checks if the guess is within the valid range.
+      - Provides feedback based on the guess (too low or too high).
+   - Congratulates the user when they guess correctly.
+3. Main block (`if __name__ == "__main__":`):
+   - Gets the difficulty level from the user in a loop, ensuring valid input (1, 2, or 3).
+   - Calls the `guess_number` function with the chosen difficulty.
+
+This code provides a basic structure for the guessing game. You can further enhance it by:
+
+- Adding a counter to track the number of guesses.
+- Implementing a scoring system based on difficulty and number of guesses.
+- Including congratulatory messages with varying enthusiasm based on the number of guesses.

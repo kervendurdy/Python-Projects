@@ -1,0 +1,49 @@
+1. Function: `lcm_listing_multiples(numbers)`
+
+- This function takes a list of integers (`numbers`) as input and attempts to calculate their Least Common Multiple (LCM) by listing multiples.
+
+Steps:
+
+   1. Finding Maximum Number:
+      - It finds the largest number (`max_num`) in the `numbers` list using the `max` function. This helps determine the upper limit for finding multiples.
+
+   2. Initializing Lists for Multiples:
+      - An empty list named `multiples` is created with a length equal to the number of input integers. This list will store the multiples of each number encountered in the input list.
+
+   3. Finding Multiples of Each Number:
+      - The code iterates through each number (`num`) in the `numbers` list using a `for` loop.
+        - Inside the loop, another loop (`while`) iteratively finds multiples of the current number (`num`) until the multiple reaches or exceeds the `max_num`.
+        - Each multiple of `num` is calculated by multiplying `num` with a counter variable `j` that starts from 1 and increments in each iteration.
+        - The calculated multiple is then appended to the corresponding sublist within the `multiples` list. This ensures that multiples of each number are stored in their designated positions.
+
+   4. Finding the Least Common Multiple (LCM):
+      - The code aims to find the first number (multiple) that appears on all the sublists within the `multiples` list. This number would be the LCM.
+        - It iterates through the multiples of the first number (`numbers[0]`) in a `for` loop, considering each multiple (`multiple`).
+        - Within this loop, the `all` function is used to check if the current `multiple` exists in all the remaining sublists of `multiples` (starting from the second sublist onwards).
+        - If the `all` function returns `True` (meaning the `multiple` is present in all sublists), it signifies that a common multiple has been found.
+        - In that case, the `multiple` is assigned to the `lcm` variable, and the loop breaks to avoid further searching.
+
+   5. Handling No Common Multiple:
+      - After iterating through the multiples of the first number, the function checks if `lcm` has a value.
+        - If `lcm` remains `None`, it implies no common multiple exists for the given numbers. In this case, the function calculates the product of all numbers in the `numbers` list using a loop.
+          - The product is assigned to the `lcm` variable.
+
+   6. Returning the LCM:
+      - Finally, the function returns the `lcm` value, which could represent either the actual LCM (if found) or the product of all numbers (if no common multiple exists).
+
+2. Main Block:
+
+Steps:
+
+   1. Getting User Input:
+      - The main block prompts the user to enter the number of integers they want to find the LCM for. It stores this value in the `num_integers` variable.
+      - It then uses a loop to get integer inputs from the user one by one. These integers are stored in a list named `numbers`.
+
+   2. Calling `lcm_listing_multiples`:
+      - The main block calls the `lcm_listing_multiples` function, passing the `numbers` list obtained from the user as input.
+
+   3. Printing the Result:
+      - The code checks the return value of `lcm_listing_multiples`.
+        - If `lcm_result` is not `None`, it represents the LCM found using the listing multiples method. The code prints a message displaying the LCM of the entered numbers using the `lcm_result` value.
+        - If `lcm_result` is `None`, it signifies no common multiple was found. The code prints a message indicating this and displays the calculated product of all numbers as an alternative result. This helps provide some form of "common multiple" even if it's not the least common one.
+
