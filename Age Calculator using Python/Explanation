@@ -1,0 +1,19 @@
+Explanation:
+
+1. Import `date` from `datetime`: This provides functions for working with dates.
+2. `calculate_age` function:
+   - Takes `birth_date_str` as input (string in YYYY-MM-DD format).
+   - Uses a `try-except` block to handle potential `ValueError` if the format is invalid.
+      - If invalid, prints an error message and returns `None`.
+   - Converts the birth date string to a `date` object using `date.fromisoformat`.
+   - Gets today's date using `date.today`.
+   - Calculates age by subtracting the birth year from the current year.
+   - Accounts for days and months to ensure accurate age calculation. 
+      - If the current month and day haven't passed the birth month and day yet, subtract 1 from the age.
+   - Returns the calculated age.
+3. Main block (`if __name__ == "__main__":`):
+   - Prompts the user to enter their birth date.
+   - Calls the `calculate_age` function with the user input.
+   - If `age` is not `None` (valid birth date), displays the calculated age to the user.
+
+This program ensures accurate age calculation by considering the birth month and day. 
